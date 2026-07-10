@@ -2,11 +2,6 @@ import { useEffect, useState } from "react";
 import api from "../api";
 import { KENYAN_CITIES, VEHICLE_CATEGORIES, VEHICLE_YEARS } from "../constants";
 
-// Shared form used by both pages/VehicleNew.jsx and pages/VehicleEdit.jsx -
-// the two pages are thin wrappers that just decide what `initialData` and
-// `onSubmit` to pass in. Keeping the actual form fields in ONE place means
-// changing a field (e.g. adding "mileage") only has to happen here, not in
-// two near-identical copies (DRY).
 export default function VehicleForm({ initialData, onSubmit, submitLabel }) {
   const [form, setForm] = useState({
     make: "",
