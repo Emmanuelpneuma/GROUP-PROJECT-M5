@@ -21,7 +21,7 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-gutter text-sm font-medium">
-          {/* Guest links - shown to everyone, logged in or not */}
+
           <Link to="/vehicles" className="text-white/80 hover:text-white">Browse cars</Link>
 
           {!user && (
