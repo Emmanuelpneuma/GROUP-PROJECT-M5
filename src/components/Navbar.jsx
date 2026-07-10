@@ -2,9 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-// Navbar shown on every page. Three different states depending on who's
-// looking at it: guest (not logged in), client, admin. See useAuth() for
-// where `user` comes from.
 export default function Navbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -33,13 +30,6 @@ export default function Navbar() {
               <Link to="/signup" className="btn-primary py-2">Sign up</Link>
             </>
           )}
-
-          {/* Which links a client sees depends on what they signed up to do
-              (rental_intent: "renter" / "owner" / "both" - set on the
-              signup form, editable later on /profile). A renter-only
-              account has no use for "List a car"/"Dashboard" (the owner's
-              booking-request inbox); an owner-only account has no use for
-              "My bookings" (their own rental history as a renter). */}
           {user && user.role !== "admin" && (user.rental_intent === "owner" || user.rental_intent === "both") && (
             <>
               <Link to="/vehicles/new" className="text-white/80 hover:text-white">List a car</Link>
