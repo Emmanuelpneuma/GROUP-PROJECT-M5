@@ -1,13 +1,5 @@
 import { useEffect, useState } from "react";
 
-// Two-slide background carousel for the Landing page hero. Each slide is a
-// 4-photo grid of premium vehicles (real Wikimedia Commons photos - see
-// SLIDES below), with the headline/CTA content overlaid on top via a dark
-// gradient scrim so the white text stays readable regardless of the photos
-// underneath. Auto-advances every 6s; dots let the user jump manually.
-//
-// To swap which cars appear here, only the URLS in SLIDES need to change -
-// nothing else in this file depends on specific vehicles.
 const SLIDES = [
   [
     "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes-Benz_S-Class_2020_W223.jpg?width=700",
@@ -60,16 +52,12 @@ export default function HeroCarousel({ children }) {
         </div>
       ))}
 
-      {/* Dark gradient scrim so the overlaid headline text stays readable
-          no matter how bright the underlying photos are. */}
       <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-dark/90 via-brand-navy/70 to-brand-navy/40" />
 
-      {/* Headline / CTA content, passed in as children from Landing.jsx */}
       <div className="section-wrap relative flex h-full flex-col items-center justify-center gap-gutter text-center text-white">
         {children}
       </div>
-
-      {/* Slide indicator dots */}
+      
       <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
         {SLIDES.map((_, i) => (
           <button
