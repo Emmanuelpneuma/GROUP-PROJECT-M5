@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 import SocialIcons from "./SocialIcons";
 
-// Full site footer - shown on every page. Split into three columns
-// (brand blurb, quick links, contact) plus a bottom bar with copyright and
-// a legal/policy link row. All links go to real routes (see App.jsx) rather
-// than "#" placeholders, so it actually works when clicked.
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -40,9 +37,7 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2 text-sm text-white/70">
             <li><Link to="/terms" className="hover:text-white">Terms &amp; Conditions</Link></li>
-            {/* Routed as /data-protection, not /privacy-policy - see the
-                comment in pages/DataProtection.jsx for why (ad-blocker
-                filter lists block that phrase). The link text is unaffected. */}
+         
             <li><Link to="/data-protection" className="hover:text-white">Privacy Policy</Link></li>
           </ul>
         </div>
