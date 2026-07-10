@@ -1,5 +1,4 @@
-// Tiny reusable loading indicator so every page doesn't invent its own
-// "Loading..." text with different styling.
+
 export default function LoadingSpinner({ label = "Loading..." }) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 py-section text-brand-navy/60">
